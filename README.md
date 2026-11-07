@@ -20,3 +20,11 @@ Laboratorio simples e pratico sobre os principais conceitos de IA.
   - SQLite
   - Arquivos de notas
   - Vector Store
+
+## arquitetura
+
+![arquitetura](docs/ARQUITETURA.gif)
+
+## plano de implementacao
+
+![implementacao](docs/IMPLEMENTACAO.jpg)
