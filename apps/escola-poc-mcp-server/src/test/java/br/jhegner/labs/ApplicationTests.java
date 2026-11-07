@@ -1,10 +1,10 @@
-package br.jhegner.labs.escola_poc_mcp_server;
+package br.jhegner.labs;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EscolaPocMcpServerApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package br.jhegner.labs.escola_poc_mcp_server;
+package br.jhegner.labs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EscolaPocMcpServerApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EscolaPocMcpServerApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
