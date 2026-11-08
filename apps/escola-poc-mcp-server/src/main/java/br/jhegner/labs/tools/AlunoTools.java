@@ -29,7 +29,7 @@ public class AlunoTools {
             return "Nenhum aluno encontrado com o nome: " + nome;
         }
         return alunos.stream()
-                .map(a -> "Nome: %s | Turma: %s | Nota: %.2f | Status: %s"
+                .map(a -> "Nome: %s | Turma: %s | Nota: %.1f | Status: %s"
                         .formatted(a.getNome(), a.getTurma(), a.getNota(), a.getStatus()))
                 .collect(joining("\n"));
     }
@@ -48,7 +48,7 @@ public class AlunoTools {
         }
         return ("Turma: %s (%d alunos):\n".formatted(turma.toUpperCase(), alunos.size())) +
                 alunos.stream()
-                        .map(a -> "- %s | Nota: %.2f | Status: %s"
+                        .map(a -> "- %s | Nota: %.1f | Status: %s"
                                 .formatted(a.getNome(), a.getNota(), a.getStatus()))
                         .collect(joining("\n"));
     }
@@ -66,9 +66,9 @@ public class AlunoTools {
         if (alunos.isEmpty()) {
             return "Nenhum aluno encontrado com nota abaixo de " + nota;
         }
-        return ("Alunos com nota abaixo de %.2f (%d alunos):\n".formatted(nota, alunos.size())) +
+        return ("Alunos com nota abaixo de %.1f (%d alunos):\n".formatted(nota, alunos.size())) +
                 alunos.stream()
-                        .map(a -> "- %s (%.2f) - Turma: %s"
+                        .map(a -> "- %s (%.1f) - Turma: %s"
                                 .formatted(a.getNome(), a.getNota(), a.getTurma()))
                         .collect(joining("\n"));
     }
@@ -86,9 +86,9 @@ public class AlunoTools {
         if (alunos.isEmpty()) {
             return "Nenhum aluno encontrado com nota acima de " + nota;
         }
-        return ("Alunos com nota acima de %.2f (%d alunos):\n".formatted(nota, alunos.size())) +
+        return ("Alunos com nota acima de %.1f (%d alunos):\n".formatted(nota, alunos.size())) +
                 alunos.stream()
-                        .map(a -> "- %s (%.2f) - Turma: %s"
+                        .map(a -> "- %s (%.1f) - Turma: %s"
                                 .formatted(a.getNome(), a.getNota(), a.getTurma()))
                         .collect(joining("\n"));
     }
@@ -109,10 +109,10 @@ public class AlunoTools {
         if (alunos.isEmpty()) {
             return "Nenhum aluno encontrado com nota acima de " + notaMaior;
         }
-        return ("Alunos da turma %s com nota entre %.2f e %.2f (%d alunos):\n"
+        return ("Alunos da turma %s com nota entre %.1f e %.1f (%d alunos):\n"
                 .formatted(turma, notaMenor, notaMaior, alunos.size())) +
                 alunos.stream()
-                        .map(a -> "- %s (%.2f) - Status: %s"
+                        .map(a -> "- %s (%.1f) - Status: %s"
                                 .formatted(a.getNome(), a.getNota(), a.getStatus()))
                         .collect(joining("\n"));
     }
@@ -132,7 +132,7 @@ public class AlunoTools {
         }
         return ("Alunos com status %s (%d alunos):\n".formatted(status, alunos.size())) +
                 alunos.stream()
-                        .map(a -> "- %s (%.2f) - Turma: %s"
+                        .map(a -> "- %s (%.1f) - Turma: %s"
                                 .formatted(a.getNome(), a.getNota(), a.getTurma()))
                         .collect(joining("\n"));
     }
@@ -162,7 +162,7 @@ public class AlunoTools {
         return """
                 Resumo da Escola Beta:
                 - Total de alunos: %d
-                - Média geral das notas: %.2f
+                - Média geral das notas: %.1f
                 - Alunos aprovados: %d
                 - Alunos em recuperação: %d
                 - Alunos reprovados: %d

@@ -10,4 +10,9 @@ CLI client que permite conectar diretamente a modelos Ollama a endpoints locais 
 
 https://share.google/aimode/VGozJlbE3zKipmg8E
 
-$ ollmcp --provider ollama --model llama3.2 --mcp-server-url http://localhost:8081/sse
+`$ ollmcp --provider ollama --model llama3.2 --mcp-server-url http://localhost:8081/sse`
+
+## asasasas
+
+Modelo de embedding para o RAG - converte texto em vetores — diferente do modelo de chat
+`ollama pull nomic-embed-text`

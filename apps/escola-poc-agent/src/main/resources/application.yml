@@ -1,0 +1,65 @@
+# ════════════════════════════════════════════════════════
+#  escola-agent — Spring Boot 4.1.2 + Spring AI 2.0.1
+# ════════════════════════════════════════════════════════
+
+spring:
+  main:
+    web-application-type: none
+
+  shell:
+    interactive:
+      enabled: true
+    banner:
+      enabled: false
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+
+      # ── Modelo de chat (LLM) ─────────────────────────
+      chat:
+        model: llama3.2
+        options:
+          temperature: 0.2
+          num-ctx: 4096
+
+      # ── Modelo de embedding (RAG) ─────────────────────
+      # OBRIGATÓRIO para o RAG funcionar.
+      # Modelos de embedding são diferentes dos modelos de chat:
+      # convertem texto em vetores numéricos (não geram respostas).
+      #
+      # Instale antes de rodar:
+      #   ollama pull nomic-embed-text
+      #
+      # nomic-embed-text: 137MB, gera vetores de 768 dimensões,
+      # excelente custo-benefício para português e inglês.
+      #
+      # Alternativas (mesma config, só muda o nome):
+      #   mxbai-embed-large   — vetores de 1024 dim, mais preciso, 670MB
+      #   all-minilm           — vetores de 384 dim, muito rápido, 46MB
+      embedding:
+        options:
+          model: nomic-embed-text
+
+    # ── MCP Client ───────────────────────────────────────
+    mcp:
+      client:
+        sse:
+          connections:
+            escola-poc-mcp-server:
+              url: 'http://localhost:8081/sse'
+              sse-endpoint: '/sse'
+
+    # ── Chat Memory ──────────────────────────────────────
+    chat:
+      memory:
+        enabled: true
+
+logging:
+  level:
+    root: WARN
+    br.com.escola: DEBUG
+    # Descomente para ver o prompt completo com os trechos RAG injetados:
+    # org.springframework.ai.chat.client: DEBUG
+    # Descomente para ver as buscas vetoriais:
+    # org.springframework.ai.vectorstore: DEBUG

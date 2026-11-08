@@ -31,7 +31,7 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{id=%d, nome='%s', turma='%s', nota=%.2f, status='%s'}"
+        return "Aluno{id=%d, nome='%s', turma='%s', nota=%.1f, status='%s'}"
                 .formatted(id, nome, turma, nota, status);
     }
 }
