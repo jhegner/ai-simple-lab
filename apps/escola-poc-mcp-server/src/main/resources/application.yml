@@ -1,0 +1,44 @@
+server:
+  port: 8081 # porta para uso do agente
+
+spring:
+
+  # Datasource do banco de dados
+  # SQLite - arquivo unico sem servidor (default)
+  # Postgress - para banco postgress (local/cloud)
+  #   url: 'jdbc:postgress://localhost:5432/escola'
+  #   driver-class-name: 'org.postgresql.Driver'
+  datasource:
+    url: 'jdbc:sqlite:./escola.db'
+    driver-class-name: 'org.sqlite.JDBC'
+  jpa:
+    database-platform: 'org.hibernate.community.dialect.SQLiteDialect'
+    hibernate:
+      # none - utilizado schema.sql explicito (local)
+      # producao - utilizar Flyway ou liquibase
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      # Executa schema.sql e data.sql na inicializacao
+      mode: always
+
+  # MCP Server - spring AI registra todos os beans ToolCallbackProvider e expoe no endpoint SSE
+  # SSE (Server-Sent Events)
+  ai:
+    mcp:
+      server:
+        name: 'escola-poc-mcp-server'
+        version: 1.0.0
+        # Transport: HTTP com Server-Sent Events
+        # O agente se conecta em: http://localhost:8081/mcp/sse
+
+  logging:
+    level:
+      root: INFO
+      br.jhegner.labs: DEBUG
+      org.springframework.ai: INFO
