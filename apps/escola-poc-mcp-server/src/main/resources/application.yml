@@ -36,6 +36,8 @@ spring:
         version: 1.0.0
         # Transport: HTTP com Server-Sent Events
         # O agente se conecta em: http://localhost:8081/mcp/sse
+        protocol: sse
+        sse-endpoint: /sse
 
   logging:
     level:
