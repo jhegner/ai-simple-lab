@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AlunoRepository extends JpaRepository<Aluno, Long> {
+public interface  AlunoRepository extends JpaRepository<Aluno, Long> {
 
     // SELECT * FROM alunos WHERE LOWER(nome) LIKE LOWER('%nome%')
     List<Aluno> findByNomeContainingIgnoreCase(String nome);
