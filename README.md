@@ -4,7 +4,7 @@ Laboratorio simples e pratico sobre os principais conceitos de IA.
 
 ## problema
 
-Implementar um modelo de IA que responda a perguntas sobre as notas, a situação e outros dados dos alunos de uma escola de forma conversacional. O modelo deverá usar informações presentes nos documentos da escola e outras fontes de dados da instituição.
+Utilizar um modelo de IA que responda a perguntas sobre as notas, a situação e outros dados dos alunos de uma escola de forma conversacional. O modelo deverá usar informações presentes nos documentos da escola e uma fonte de dado transacional.
 
 ## tópicos do lab
 
